@@ -293,7 +293,7 @@ export const FinalDashboard: React.FC<Props> = ({ analysis, strategy, selectedMo
               <div>
                 <span className="text-xs font-black text-indigo-400 uppercase tracking-[0.2em] block mb-4">Target Channels</span>
                 <div className="flex flex-wrap gap-2">
-                  {strategy.jobHunt.channels.map((ch, i) => (
+                  {(strategy?.jobHunt?.channels || []).map((ch, i) => (
                     <span key={i} className="px-4 py-2 bg-white/10 text-white text-xs font-bold rounded-xl border border-white/5">{ch}</span>
                   ))}
                 </div>
@@ -302,7 +302,7 @@ export const FinalDashboard: React.FC<Props> = ({ analysis, strategy, selectedMo
               <div>
                 <span className="text-xs font-black text-indigo-400 uppercase tracking-[0.2em] block mb-4">Interview Playbook</span>
                 <ul className="space-y-4">
-                  {strategy.jobHunt.interviewTips.slice(0, 3).map((tip, i) => (
+                  {(strategy?.jobHunt?.interviewTips || []).slice(0, 3).map((tip, i) => (
                     <li key={i} className="text-sm text-slate-300 font-medium leading-relaxed flex gap-3 italic">
                       <span className="text-indigo-400 font-bold shrink-0 text-lg">"</span>
                       {tip}
